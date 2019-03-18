@@ -10,8 +10,8 @@ import pprint
 config_name = "yaml_reader.yml"
 
 
-class YamlConfiguration():
-    '''ideal solution'''
+class obsoleteYamlConfiguration():
+    '''stupid solution'''
     classes = []
 
     def __init__(self, yaml_data):
@@ -23,7 +23,7 @@ class YamlConfiguration():
                        "\n" for value in (self.classes))
 
 
-class YamlConfiguration2():
+class yamlconfiguration():
     '''ideal solution'''
 
     def __init__(self, kwargs):
@@ -60,11 +60,11 @@ def main():
         print("{} {}".format(key, value))
 
     print("class with dict solution.")
-    confi = YamlConfiguration(configurationMap)
+    confi = yamlconfiguration(configurationMap)
     print(confi)
 
     print("class with attrs solution.")
-    confi2 = YamlConfiguration2(configurationMap)
+    confi2 = obsoleteYamlConfiguration(configurationMap)
     print(confi2)
 
 

@@ -10,7 +10,7 @@ import pprint
 config_name = "json_reader.json"
 
 
-class JsonConfiguration():
+class obsoleteJsonConfiguration():
     '''bad solution'''
     classes = []
 
@@ -23,7 +23,7 @@ class JsonConfiguration():
                        "\n" for value in (self.classes))
 
 
-class JsonConfiguration2():
+class jsonconfiguration():
     '''ideal solution'''
 
     def __init__(self, kwargs):
@@ -60,11 +60,11 @@ def main():
         print("{} {}".format(key, value))
 
     print("\nclass with dict solution.")
-    confi = JsonConfiguration(configurationMap)
+    confi = obsoleteJsonConfiguration(configurationMap)
     print(confi)
 
     print("class with attrs solution.")
-    confi2 = JsonConfiguration2(configurationMap)
+    confi2 = jsonconfiguration(configurationMap)
     print(confi2)
 
 
