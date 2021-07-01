@@ -9,7 +9,28 @@ from sqlalchemy import ForeignKey
 from sqlalchemy import Integer
 from sqlalchemy import String
 
+
+    
+
 Base = declarative_base()
+
+class RestaurantesDatabase():
+    _engine = ""
+    _session = ""
+    
+    def __init__(self):
+        _engine = create_engine('sqlite:///restaurantmenu.db')
+        Base.metadata.create_all(_engine)
+        Base.metadata.bind = _engine
+        DBSession = sessionmaker(bind=_engine)
+        _session = DBSession() 
+    
+    def list_restaurants(self):
+        return session.query(Restaurant).all()
+        
+    def add_restaurante(new_restaurant):
+        pass
+        
 
 class Restaurant(Base):
     __tablename__ = 'restaurant'

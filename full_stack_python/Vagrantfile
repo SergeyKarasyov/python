@@ -2,8 +2,7 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-  config.vm.box = "bento/ubuntu-16.04-i386"
-  config.vm.box_version = "= 2.3.5"
+  config.vm.box = "ubuntu/bionic64"
   config.vm.synced_folder ".", "/vagrant"
   config.vm.network "forwarded_port", guest: 8000, host: 8000, host_ip: "127.0.0.1"
   config.vm.network "forwarded_port", guest: 8080, host: 8080, host_ip: "127.0.0.1"
@@ -28,7 +27,7 @@ Vagrant.configure("2") do |config|
     pip3 install flask packaging oauth2client redis passlib flask-httpauth
     pip3 install sqlalchemy flask-sqlalchemy psycopg2-binary bleach requests
 
-    apt-get -qqy install python python-pip
+    apt-get -qqy install python python-pip python-typing
     pip2 install --upgrade pip
     pip2 install flask packaging oauth2client redis passlib flask-httpauth
     pip2 install sqlalchemy flask-sqlalchemy psycopg2-binary bleach requests
